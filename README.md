@@ -117,33 +117,55 @@ API Testing with Swagger:
    ---------------------------------------------
    ## Screenshots
 
-![Authentication Test] https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/01_authentication_test.png
-![POST Auth] https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/02_post_auth.png
+# Cat Facts API
 
-![GET /fetch/ Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/03_get_fetch_auth.png)
-![GET /fetch/ Response](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/04_get_fetch_response.png)
-![GET /catfacts/ IDs](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/05_get_catfacts_ids.png)
-![GET /catfacts/{id}](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/06_get_catfact_id.png)
-![GET invalid fact_id](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/07_get_catfact_invalid.png)
-![GET /catfacts/ Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/08_get_facts_auth.png)
-![POST catfacts return ID](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/09_post_catfact_return.png)
-![POST catfacts Test](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/10_post_catfact_test.png)
-![PUT tested ID](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/11_put_tested_id.png)
-![PUT Testing](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/12_put_testing.png)
-![PUT with Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/13_put_with_auth.png)
-![DELETE Fact](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/14_delete_fact.png)
-![DELETE with Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/15_delete_with_auth.png)
-![DELETE Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/16_delete_auth.png)
-![Test Rate Limits](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/17_test_rate_limits.png)
-![Cache Miss Test](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/18_test_cache_miss.png)
-![Verify GET after Delete](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/19_verify_get_after_delete.png)
+**Cat Facts API** is a FastAPI project that allows users to create, read, update, delete, and fetch cat facts.  
+This project demonstrates CRUD operations, authentication, caching, and rate limiting.
 
---------------------------------------------------
+---
 
-## Demo Video
+## Demo & Screenshots
 
-<video width="600" controls>
-  <source src="https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/20_demo.mkv" type="video/mp4">
-  Your browser does not support the video tag.
+### 1. Authentication
+![01_authentication_test](Screenshots/01_authentication_test.png)
+![02_post_auth](Screenshots/02_post_auth.png)
+
+### 2. Fetching Cat Facts (GET)
+![03_get_fetch_auth](Screenshots/03_get_fetch_auth.png)
+![04_get_fetch_response](Screenshots/04_get_fetch_response.png)
+![05_get_catfacts_ids](Screenshots/05_get_catfacts_ids.png)
+![06_get_catfact_id](Screenshots/06_get_catfact_id.png)
+![07_get_catfact_invalid](Screenshots/07_get_catfact_invalid.png)
+![08_get_facts_auth](Screenshots/08_get_facts_auth.png)
+
+### 3. Creating Cat Facts (POST)
+![09_post_catfact_return](Screenshots/09_post_catfact_return.png)
+![10_post_catfact_test](Screenshots/10_post_catfact_test.png)
+
+### 4. Updating Cat Facts (PUT)
+![11_put_tested_id](Screenshots/11_put_tested_id.png)
+![12_put_testing](Screenshots/12_put_testing.png)
+![13_put_with_auth](Screenshots/13_put_with_auth.png)
+
+### 5. Deleting Cat Facts (DELETE)
+![14_delete_fact](Screenshots/14_delete_fact.png)
+![15_delete_with_auth](Screenshots/15_delete_with_auth.png)
+![16_delete_auth](Screenshots/16_delete_auth.png)
+
+### 6. Advanced Features
+#### Rate Limits
+![17_test_rate_limits](Screenshots/17_test_rate_limits.png)
+
+#### Cache Testing
+![18_test_cache_miss](Screenshots/18_test_cache_miss.png)
+
+#### GET after Delete
+![19_verify_get_after_delete](Screenshots/19_verify_get_after_delete.png)
+
+### 7. Demo Video
+[Watch full demo](Screenshots/20_demo.mkv)
+
+
+
 </video>
 
