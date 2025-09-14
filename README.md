@@ -117,8 +117,9 @@ API Testing with Swagger:
    ---------------------------------------------
    ## Screenshots
 
-![Authentication Test](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/01_authentication_test.png)
-![POST Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/02_post_auth.png)
+![Authentication Test] https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/01_authentication_test.png
+![POST Auth] https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/02_post_auth.png
+
 ![GET /fetch/ Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/03_get_fetch_auth.png)
 ![GET /fetch/ Response](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/04_get_fetch_response.png)
 ![GET /catfacts/ IDs](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/05_get_catfacts_ids.png)
