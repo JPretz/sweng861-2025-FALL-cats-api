@@ -100,6 +100,8 @@ How to Run it:
 3. Access the API:
    
        Swagger UI: http://127.0.0.1:8000/docs
+   
        Root endpoint: http://127.0.0.1:8000/
+   
 
    
