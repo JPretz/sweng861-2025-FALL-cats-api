@@ -58,57 +58,114 @@ async def startup():
     FastAPICache.init(InMemoryBackend())
 
 # --------------------
-# Endpoints
+# Root Endpoint
 # --------------------
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the Cat Facts Bonus API! Use /fetch/ or /catfacts/ endpoints."}
 
+# --------------------
+# Fetch Cat Facts Endpoint
+# --------------------
 @app.get("/fetch/")
 @cache(expire=60)
 @limiter.limit("5/minute")
-async def fetch_catfacts(request: Request, count: int = 10, db: Session = Depends(get_db)):
-    async with httpx.AsyncClient() as client:
-        response = await client.get(f"https://catfact.ninja/facts?limit={count}")
-    if response.status_code != 200:
-        raise HTTPException(status_code=500, detail="Failed to fetch cat facts")
-    data = response.json().get("data", [])
-    added_count = 0
-    for item in data:
-        fact_text = item.get("fact")
-        if fact_text:
-            crud.create_catfact(db, CatFactCreateSchema(fact=fact_text))
-            added_count += 1
-    return {"message": f"{added_count} unique cat facts added successfully!"}
+async def fetch_catfacts(
+    request: Request,
+    count: int = 10,
+    db: Session = Depends(get_db)
+):
+    """
+    Fetch cat facts from the external API, store unique ones in the DB,
+    and return the added facts with their IDs.
+    """
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(f"https://catfact.ninja/facts?limit={count}")
+        if response.status_code != 200:
+            raise HTTPException(status_code=500, detail="Failed to fetch cat facts")
 
+        data = response.json().get("data", [])
+        added_facts = []
+
+        for item in data:
+            fact_text = item.get("fact")
+            if fact_text and not crud.catfact_exists(db, fact_text):
+                db_fact = crud.create_catfact(db, CatFactCreateSchema(fact=fact_text))
+                added_facts.append({"id": db_fact.id, "fact": db_fact.fact})
+
+        return {
+            "message": f"{len(added_facts)} unique cat facts added successfully!",
+            "added_facts": added_facts
+        }
+
+    except Exception as e:
+        print("Error in /fetch/:", e)
+        raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+
+# --------------------
+# Read All Cat Facts
+# --------------------
 @app.get("/catfacts/", response_model=List[CatFactSchema])
 @cache(expire=60)
 @limiter.limit("5/minute")
-async def read_catfacts(request: Request, db: Session = Depends(get_db)):
+async def read_catfacts(
+    request: Request,
+    db: Session = Depends(get_db)
+):
     return crud.get_catfacts(db)
 
+# --------------------
+# Read Single Cat Fact
+# --------------------
 @app.get("/catfacts/{fact_id}", response_model=CatFactSchema)
 @cache(expire=60)
 @limiter.limit("5/minute")
-async def read_catfact(request: Request, fact_id: int, db: Session = Depends(get_db)):
+async def read_catfact(
+    request: Request,
+    fact_id: int,
+    db: Session = Depends(get_db)
+):
     db_fact = crud.get_catfact(db, fact_id)
     if not db_fact:
         raise HTTPException(status_code=404, detail="Fact not found")
     return db_fact
 
+# --------------------
+# Create Cat Fact
+# --------------------
 @app.post("/catfacts/", response_model=CatFactSchema)
-async def create_catfact(fact: CatFactCreateSchema, db: Session = Depends(get_db),
-                         credentials: HTTPAuthorizationCredentials = Depends(authorize)):
+async def create_catfact(
+    fact: CatFactCreateSchema,
+    db: Session = Depends(get_db),
+    credentials: HTTPAuthorizationCredentials = Depends(authorize)
+):
     return crud.create_catfact(db, fact)
 
+# --------------------
+# Update Cat Fact
+# --------------------
 @app.put("/catfacts/{fact_id}", response_model=CatFactSchema)
-async def update_catfact(fact_id: int, fact: CatFactCreateSchema, db: Session = Depends(get_db),
-                         credentials: HTTPAuthorizationCredentials = Depends(authorize)):
+async def update_catfact(
+    fact_id: int,
+    fact: CatFactCreateSchema,
+    db: Session = Depends(get_db),
+    credentials: HTTPAuthorizationCredentials = Depends(authorize)
+):
     updated = crud.update_catfact(db, fact_id, fact)
     if not updated:
         raise HTTPException(status_code=404, detail="Fact not found")
     return updated
 
+# --------------------
+# Delete Cat Fact
+# --------------------
 @app.delete("/catfacts/{fact_id}")
-async def delete_catfact(fact_id: int, db: Session = Depends(get_db),
-                         credentials: HTTPAuthorizationCredentials = Depends(authorize)):
+async def delete_catfact(
+    fact_id: int,
+    db: Session = Depends(get_db),
+    credentials: HTTPAuthorizationCredentials = Depends(authorize)
+):
     deleted = crud.delete_catfact(db, fact_id)
     if not deleted:
         raise HTTPException(status_code=404, detail="Fact not found")

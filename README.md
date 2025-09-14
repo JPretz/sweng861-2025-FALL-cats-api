@@ -1,6 +1,6 @@
-# Cat Facts Bonus API
+ Cat Facts Bonus API
 
-## Introduction
+ Introduction
 The Cat Facts Bonus API is a **FastAPI backend application** that fetches, stores, and manages cat facts.  
 It demonstrates the use of:
 
@@ -15,7 +15,7 @@ The backend allows users to fetch cat facts from an external API, store them in 
 
 -----------------------------------------------------------
 
-## Project Structure
+Project Structure
 catfacts_bonus/
 ├─ main.py
 ├─ crud.py
@@ -34,7 +34,7 @@ catfacts_bonus/
 
 -------------------------------------------------------------
 
-## Project Description
+Project Description
 
 This project:
 
@@ -47,7 +47,7 @@ This project:
 
 ------------------------------------------------------------------------------
 
-## Steps to Build the Backend
+ Steps to Build the Backend
 
 1. **Setup Project Environment**
    - Create a virtual environment and install dependencies:
@@ -115,22 +115,22 @@ API Testing with Swagger:
    . Use Swagger UI for interactive testing.
 
    ---------------------------------------------
-   ## Screenshots
+   Screenshots
 
-# Cat Facts API
+ Cat Facts API
 
 **Cat Facts API** is a FastAPI project that allows users to create, read, update, delete, and fetch cat facts.  
 This project demonstrates CRUD operations, authentication, caching, and rate limiting.
 
 ---
 
-## Demo & Screenshots
+Demo & Screenshots
 
-### 1. Authentication
+ 1. Authentication
 ![01_authentication_test](Screenshots/01_authentication_test.png)
 ![02_post_auth](Screenshots/02_post_auth.png)
 
-### 2. Fetching Cat Facts (GET)
+ 2. Fetching Cat Facts (GET)
 ![03_get_fetch_auth](Screenshots/03_get_fetch_auth.png)
 ![04_get_fetch_response](Screenshots/04_get_fetch_response.png)
 ![05_get_catfacts_ids](Screenshots/05_get_catfacts_ids.png)
@@ -138,34 +138,33 @@ This project demonstrates CRUD operations, authentication, caching, and rate lim
 ![07_get_catfact_invalid](Screenshots/07_get_catfact_invalid.png)
 ![08_get_facts_auth](Screenshots/08_get_facts_auth.png)
 
-### 3. Creating Cat Facts (POST)
+ 3. Creating Cat Facts (POST)
 ![09_post_catfact_return](Screenshots/09_post_catfact_return.png)
 ![10_post_catfact_test](Screenshots/10_post_catfact_test.png)
 
-### 4. Updating Cat Facts (PUT)
+ 4. Updating Cat Facts (PUT)
 ![11_put_tested_id](Screenshots/11_put_tested_id.png)
 ![12_put_testing](Screenshots/12_put_testing.png)
 ![13_put_with_auth](Screenshots/13_put_with_auth.png)
 
-### 5. Deleting Cat Facts (DELETE)
+ 5. Deleting Cat Facts (DELETE)
 ![14_delete_fact](Screenshots/14_delete_fact.png)
 ![15_delete_with_auth](Screenshots/15_delete_with_auth.png)
 ![16_delete_auth](Screenshots/16_delete_auth.png)
 
-### 6. Advanced Features
-#### Rate Limits
+ 6. Advanced Features
+  Rate Limits
 ![17_test_rate_limits](Screenshots/17_test_rate_limits.png)
 
-#### Cache Testing
+ Cache Testing
 ![18_test_cache_miss](Screenshots/18_test_cache_miss.png)
 
-#### GET after Delete
+GET after Delete
 ![19_verify_get_after_delete](Screenshots/19_verify_get_after_delete.png)
 
-### 7. Demo Video
+ 7. Demo Video
 [Watch full demo](Screenshots/20_demo.mkv)
 
 
 
 </video>
-
