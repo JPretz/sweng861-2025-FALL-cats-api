@@ -87,3 +87,19 @@ http://127.0.0.1:8000/docs
 
 --------------------------------------------
 
+How to Run it:
+1. Activate your virtual environment:
+   # Windows
+       venv\Scripts\activate
+   # macOS/Linux
+       venv/bin/activate
+2. Run the FastAPI server:
+   
+        uvicorn main:app --reload
+
+3. Access the API:
+   
+       Swagger UI: http://127.0.0.1:8000/docs
+       Root endpoint: http://127.0.0.1:8000/
+
+   
