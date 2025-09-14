@@ -94,14 +94,10 @@ How to Run it:
    # macOS/Linux
        venv/bin/activate
 2. Run the FastAPI server:
-   
-        uvicorn main:app --reload
+       uvicorn main:app --reload
 
 3. Access the API:
-   
    Swagger UI: http://127.0.0.1:8000/docs
-   
    Root endpoint: http://127.0.0.1:8000/
    
-Root endpoint: http://127.0.0.1:8000/
    
