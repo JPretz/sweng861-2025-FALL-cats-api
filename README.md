@@ -100,4 +100,49 @@ How to Run it:
    Swagger UI: http://127.0.0.1:8000/docs
    Root endpoint: http://127.0.0.1:8000/
    
-   
+   ----------------------------------------------
+API Testing with Swagger:
+
+1. Fetch Cat Facts /fetch/
+
+   . Set count query parameter to fetch multiple facts.
+   . Returns unique facts stored in the database along with their IDs.
+
+2. CRUD Operations /catfacts/
+
+   . API key required (mysecretkey123) for POST, PUT, DELETE.
+   . GET endpoints do not require authentication.
+   . Use Swagger UI for interactive testing.
+
+   ---------------------------------------------
+   ## Screenshots
+
+![Authentication Test](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/01_authentication_test.png)
+![POST Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/02_post_auth.png)
+![GET /fetch/ Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/03_get_fetch_auth.png)
+![GET /fetch/ Response](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/04_get_fetch_response.png)
+![GET /catfacts/ IDs](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/05_get_catfacts_ids.png)
+![GET /catfacts/{id}](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/06_get_catfact_id.png)
+![GET invalid fact_id](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/07_get_catfact_invalid.png)
+![GET /catfacts/ Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/08_get_facts_auth.png)
+![POST catfacts return ID](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/09_post_catfact_return.png)
+![POST catfacts Test](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/10_post_catfact_test.png)
+![PUT tested ID](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/11_put_tested_id.png)
+![PUT Testing](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/12_put_testing.png)
+![PUT with Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/13_put_with_auth.png)
+![DELETE Fact](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/14_delete_fact.png)
+![DELETE with Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/15_delete_with_auth.png)
+![DELETE Auth](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/16_delete_auth.png)
+![Test Rate Limits](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/17_test_rate_limits.png)
+![Cache Miss Test](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/18_test_cache_miss.png)
+![Verify GET after Delete](https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/19_verify_get_after_delete.png)
+
+--------------------------------------------------
+
+## Demo Video
+
+<video width="600" controls>
+  <source src="https://raw.githubusercontent.com/JohnPretz/CatFactsBonus/main/screenshots/20_demo.mkv" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
